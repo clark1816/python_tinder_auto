@@ -3,6 +3,7 @@ from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.keys import Keys
 import pickupline
+import workinglinesonly
 
 # Create object
 driver = webdriver.Chrome()
@@ -20,8 +21,8 @@ def tinder_bot():
     login.click()
     sleep(2)
     #/html/body/div[2]/main/div/div[1]/div/div/div[3]/span/div[3]/button/div[2]/div[2]
-    continue_with_number = driver.find_element('xpath','/html/body/div[2]/main/div/div[1]/div/div/div[3]/span/div[3]/button/div[2]/div[2]')
-    continue_with_number.click()
+    # continue_with_number = driver.find_element('xpath','/html/body/div[2]/main/div/div[1]/div/div/div[3]/span/div[3]/button/div[2]/div[2]')
+    # continue_with_number.click()
 
     t = input("Enter the time in seconds you think it will take you to log in: ")
     ##put code for timer here 
@@ -76,7 +77,7 @@ def send_message(x,links):
     text_area = driver.find_element('xpath', '/html/body/div[1]/div/div[1]/div/main/div[1]/div/div/div/div[1]/div/div/div[3]/form/textarea')
     
     print(x)   
-    text_area.send_keys(pickupline.pick_up_lines[x])
+    text_area.send_keys(workinglinesonly.pick_up_lines[x])
     text_area.send_keys(Keys.ENTER)
     sleep(2) 
 
